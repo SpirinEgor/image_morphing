@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.10)
 project(image_morphing)
 
 find_package(OpenCV REQUIRED)

@@ -103,13 +103,19 @@ void morphTriangle(Mat & img1, Mat & img2, Mat & img, vector<Point2f> & t1,
 }
 
 int main(int argc, char * argv[]) {
-    if (argc != 5) {
+    if (argc != 6) {
         cout << "use following args:" << endl;
         cout << "arg #1: path to image 1" << endl;
-        cout << "arg #1: path to json for image 1" << endl;
-        cout << "arg #2: path to image 2" << endl;
-        cout << "arg #2: path to json for image 2" << endl;
+        cout << "arg #2: path to points for image 1" << endl;
+        cout << "arg #3: path to image 2" << endl;
+        cout << "arg #4: path to points for image 2" << endl;
+        cout << "arg #5: path to output results" << endl;
         return 0;
+    }
+
+    string res_path = argv[5];
+    if (res_path.back() != '/') {
+        res_path += "/";
     }
 
     Mat img1, img2;
@@ -175,7 +181,7 @@ int main(int argc, char * argv[]) {
             morphTriangle(img1, img2, img_res, t1, t2, t_res, alpha);
         }
 
-        imwrite("result/" + to_string(id) + ".jpg", img_res);
+        imwrite(res_path + to_string(id) + ".jpg", img_res);
     }
 
     return 0;
