@@ -22,4 +22,7 @@ x2 y2
 ```
 `output` - path to output folder (it must exist)
 ### result
-<img src="result/result.gif" width=300 height=300/>
+<img src="result/result.gif" width=300 height=400/>
+
+### links
+- [Face Morph Using OpenCV — C++ / Python](https://www.learnopencv.com/face-morph-using-opencv-cpp-python/)
