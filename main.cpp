@@ -129,14 +129,14 @@ int main(int argc, char * argv[]) {
     img2.convertTo(img2, CV_32F);
 
     // Draw triangulation
-//    Mat img1_copy, img2_copy;
-//    img1.copyTo(img1_copy);
-//    img2.copyTo(img2_copy);
-//    Scalar color(255, 255, 255);
-//    draw_triangulation(img1_copy, subdiv1, color);
-//    draw_triangulation(img2_copy, subdiv2, color);
-//    imwrite("result/tri1.jpg", img1_copy);
-//    imwrite("result/tri2.jpg", img2_copy);
+    Mat img1_copy, img2_copy;
+    img1.copyTo(img1_copy);
+    img2.copyTo(img2_copy);
+    Scalar color(255, 255, 255);
+    draw_triangulation(img1_copy, subdiv1, color);
+    draw_triangulation(img2_copy, subdiv2, color);
+    imwrite(res_path + "tri1.jpg", img1_copy);
+    imwrite(res_path + "tri2.jpg", img2_copy);
 
     vector<Vec6f> triangles1, triangles2;
     subdiv1.getTriangleList(triangles1);
