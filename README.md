@@ -11,7 +11,7 @@ make
 ```
 ### run
 ```
-./image_morphing img1 points1 img2 points2 output
+./image_morphing img1 points1 img2 points2 frames output
 ```
 `img*` - path to the image
 
@@ -20,6 +20,8 @@ make
 x1 y1
 x2 y2
 ```
+`frames` - number of frames (minimum 2)
+
 `output` - path to output folder (it must exist)
 ### result
 <img src="result/result.gif" width=300 height=400/>

@@ -103,17 +103,24 @@ void morphTriangle(Mat & img1, Mat & img2, Mat & img, vector<Point2f> & t1,
 }
 
 int main(int argc, char * argv[]) {
-    if (argc != 6) {
+    if (argc != 7) {
         cout << "use following args:" << endl;
         cout << "arg #1: path to image 1" << endl;
         cout << "arg #2: path to points for image 1" << endl;
         cout << "arg #3: path to image 2" << endl;
         cout << "arg #4: path to points for image 2" << endl;
+        cout << "arg #5: number of frames (min 2)" << endl;
         cout << "arg #5: path to output results" << endl;
         return 0;
     }
 
-    string res_path = argv[5];
+    int frames = stoi(argv[5]);
+    if (frames < 2) {
+        cout << "minimum 2 frames" << endl;
+        return 0;
+    }
+
+    string res_path = argv[6];
     if (res_path.back() != '/') {
         res_path += "/";
     }
@@ -161,8 +168,8 @@ int main(int argc, char * argv[]) {
         }
     }
 
-    for (int id = 0; id <= 100; ++id) {
-        auto alpha = static_cast<float>(1. * id / 100);
+    for (int id = 0; id < frames; ++id) {
+        auto alpha = static_cast<float>(1. * id / (frames - 1));
         Mat img_res = Mat::zeros(img1.size(), CV_32FC3);
         vector<Point2f> key_points_res;
         for (auto i = 0; i < key_points1.size(); ++i) {
