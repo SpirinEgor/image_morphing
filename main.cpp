@@ -14,7 +14,7 @@ using namespace std;
 using namespace cv;
 
 static void draw_point(Mat & img, const Point2f &fp, const Scalar &color) {
-    circle(img, fp, 2, color, CV_FILLED, CV_AA, 0);
+    circle(img, fp, 2, color, FILLED, LINE_AA, 0);
 }
 
 static void draw_triangulation(Mat & img, Subdiv2D & subdiv, const Scalar &delaunay_color) {
